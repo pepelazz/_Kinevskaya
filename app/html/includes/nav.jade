@@ -1,0 +1,8 @@
+ul.nav.pull-right#main-menu
+    // var 'nav' from data.json
+    each val, index in nav
+        - liClass = (val[1] == activeNav) ? 'active' : ''
+        li(class=liClass)
+            a(href=path + val[0])= val[1]
+
+

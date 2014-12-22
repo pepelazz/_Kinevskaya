@@ -1,0 +1,8 @@
+extends index.jade
+block vars
+    - path="./"
+    - var activeNav='contact'
+block content
+    .photo-grid
+        div
+            #map(yandex-map="{lat:55.753392, lon:37.641373, adr:'г.Москва, <br> Подкопаевский пер. 6'}")

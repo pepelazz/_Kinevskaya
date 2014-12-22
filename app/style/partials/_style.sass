@@ -1,0 +1,312 @@
+
+html
+  font-family: 'Roboto', sans-serif!important
+  font-size: 100%
+  @include breakpoint(max-width $break-large)
+    font-size: 90%
+  @include breakpoint(max-width $break-medium)
+    font-size: 80%
+
+body
+  position: relative
+  min-height: 100vh
+
+header
+  position: relative
+  background-color: $color-header
+  height: 25rem
+  padding: 2rem $wide-border 0 $wide-border
+  box-sizing: border-box
+  @include layout(9 no-gutters)
+  font-weight: bold
+    opacity: 0.7
+  .col1
+    @include span(5)
+  .col2
+    @include span(4)
+  .row1
+    margin-bottom: 0.5rem
+    .position
+      @include breakpoint(min-width $break-phone)
+        float: left
+      margin-right: 5rem
+      font-size: 1.2rem
+    .phone
+      @include breakpoint(min-width $break-phone)
+        float: left
+      margin-right: 6rem
+      font-weight: normal
+    .email
+      font-weight: normal
+    &.col1
+      @include breakpoint(max-width $break-1150)
+        @include span(full)
+      .phone, .email
+        display: none
+        @include breakpoint(max-width $break-1150)
+          display: block
+    &.col2
+      @include breakpoint(max-width $break-1150)
+        display: none
+  .icon
+    width: 1rem
+    vertical-align: middle
+    margin-right: 0.3rem
+  .row2
+    height: 3.5rem
+    margin-bottom: 0.5rem
+    &.col2
+      @include breakpoint(max-width $break-1150)
+        @include span(5)
+  .title
+    font-size: 2rem
+    @include breakpoint(max-width $break-1150)
+      font-size: 1.5rem
+    @include breakpoint(max-width $break-small)
+      font-size: 1.1rem
+    background: white
+    line-height: 3.5rem
+    opacity: 1
+    a
+      text-decoration: none
+      color: #000000
+    .fio
+      padding-left: 2rem
+      .mid-name
+        padding-left: 0.5rem
+        @include breakpoint(max-width $break-phone)
+          display: none
+  .menu
+    @include breakpoint(max-width $break-phone)
+      display: none
+    background-color: $color-header-banner
+    opacity: 0.7
+    line-height: 1.5
+    ul
+      list-style-type: none
+    li
+      float: left
+      opacity: 1
+      font-weight: normal
+      margin-right: 2rem
+      a
+        text-decoration: none
+        color: #ffffff
+  .row3
+    height: 3.5rem
+    .btn-request
+      @include break
+      @include span(3)
+      background-color: #FFEB3B
+      height: 100%
+      line-height: 3.5rem
+      text-align: center
+      font-size: 1.2rem
+      @include breakpoint(max-width $break-small)
+        font-size: 1rem
+      cursor: pointer
+      margin-bottom: 2.5rem
+      span
+        opacity: 0.6
+        .consulting
+          margin-left: 0.4rem
+          opacity: 1
+          @include breakpoint(max-width $break-small)
+            display: none
+  .row4
+    @include break
+    @include span(3)
+    @include breakpoint(max-width $break-small)
+      @include span(5)
+    @include breakpoint(max-width $break-phone)
+      display: none
+    span
+      font-size: 1.3rem
+      font-weight: normal
+      opacity: 0.7
+      font-style: italic
+  .cite-about-way
+    position: absolute
+    top: 1.5rem
+    left: 25rem
+    @include breakpoint(max-width 1200px)
+      display: none
+  .lya
+    position: absolute
+    bottom: 0
+    right: 0
+    pointer-events: none
+    height: 22rem
+    
+.main-area
+  overflow: auto
+  padding: 1rem $wide-border
+  .nav
+    width: 210px
+    float: left
+    @include breakpoint(max-width $break-small)
+      width: 100%
+      clear: both
+    ul
+      list-style-type: none
+      padding-left: 0
+      margin: 0
+    &>ul
+      &>li
+        font-size: 1.5rem
+        margin-bottom: 1rem
+        @include breakpoint(max-width $break-small)
+          float: left
+          margin-right: 2rem
+        li
+          line-height: 1.4rem
+          &.active
+            background-color: lighten($color-header-banner, 10%)
+            padding-left: 1rem
+            padding-bottom: 0.3rem
+            @include breakpoint(max-width $break-small)
+              padding-left: 0.3rem
+            a
+              color: white
+          a
+            text-decoration: none
+            font-size: 1rem
+            color: #000000
+            opacity: 0.8
+  .photo-grid
+    @include layout(10 no-gutters)
+    @include breakpoint(max-width $break-small)
+      clear: both
+      margin-left: 0
+    overflow: auto
+    margin-left: 210px
+    table.relationship
+      width: 100%
+      td
+        width: 50%
+        &:nth-child(1)
+          text-align: right
+          span
+            padding-right: 1rem
+        &:nth-child(2)
+          text-align: left
+          span
+            padding-left: 1rem
+        span
+          display: block
+          font-size: 2rem
+          font-weight: bold
+        img
+          width: 100%
+          max-width: 309px
+    img.responsive
+      width: 100%
+    img.psychosomatics, img.destination
+      display: block
+      max-width: 500px
+      margin: 0 auto
+    .about-cite
+      @include prefix(5)
+      @include span(5)
+      font-size: 1rem
+      font-style: italic
+      margin-bottom: 2rem
+    .about-list
+      font-size: 1.2rem
+      @include break
+      @include span(6)
+      @include prefix(2)
+      //list-style: none
+      li
+        padding-bottom: 2rem
+
+.photo-grid.seminars, .photo-grid.trainings
+  @include layout(9 .25 inside)
+  .col1
+    @include span(3)
+    padding: 1rem
+    img
+      width: 100%
+      opacity: 0.5
+      &:hover
+        opacity: 1
+    a
+      text-decoration: none
+      color: #000000
+      text-align: center
+
+.footer
+  clear: both
+  overflow: auto
+  margin-top: 2rem
+  background-color: $color-header
+  min-height: 5rem
+  padding: 1rem $wide-border
+  @include breakpoint(max-width $break-small)
+    display: none
+  &.sticky
+    position: absolute
+    bottom: 0
+    width: 100%
+  .footer-grid
+    margin-left: 210px
+    @include layout(9 no-gutters)
+    .col
+      @include span(3)
+      ul
+        padding-left: 0
+        list-style: none
+        li
+          padding-bottom: 0.2rem
+          a
+            text-decoration: none
+            color: #000000
+            &:hover
+              opacity: 0.5
+      .icon
+        width: 1rem
+        vertical-align: middle
+        margin-right: 0.3rem
+
+#modal
+  display: none
+  &.show
+    display: block
+  position: absolute
+  top: 8rem
+  left: $wide-border
+  width: 20rem
+  background: white
+  border: 1px solid
+  border-color: darken($color-header, 10%)
+  padding: 2rem 3rem
+  .input-title
+    text-align: right
+    padding-right: 1rem
+  input
+    width: 93%
+    line-height: 2
+    padding: 0.2rem 0.5rem
+  &>div
+    overflow: auto
+    margin-bottom: 0.5rem
+  .btn
+    padding: 0.5rem
+    margin-top: 1rem
+    border: 1px solid $color-header-banner
+    cursor: pointer
+    text-align: center
+    &:hover
+      background: $color-header-banner
+      color: white
+  .close
+    position: absolute
+    top: 0.5rem
+    right: 0.5rem
+    opacity: 0.5
+    cursor: pointer
+
+
+
+
+

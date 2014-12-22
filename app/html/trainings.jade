@@ -1,0 +1,22 @@
+extends index.jade
+block vars
+    - path="./"
+    - var activeNav='trainings'
+block content
+    .photo-grid.seminars
+        .col1
+            a(href='http://icievolution.com/training/1' target='_blank')
+                img(src='./images/seminars/hellinger.jpg')
+                .seminar-title Системные расстановки по методу Б. Хеллингера
+        .col1
+            a(href='http://icievolution.com/training/6' target='_blank')
+                img(src='./images/seminars/woman-training.jpg')
+                .seminar-title Женский тренинг
+        .col1
+            a(href='http://icievolution.com/training/5' target='_blank')
+                img(src='./images/seminars/shadow.jpg')
+                .seminar-title Работа с тенью
+        .col1
+            a(href='http://icievolution.com/training/8' target='_blank')
+                img(src='./images/seminars/placement-organisation.jpg')
+                .seminar-title Организационные расстановки

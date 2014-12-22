@@ -1,0 +1,167 @@
+doctype
+html(ng-app='app' ng-controller='main')
+
+  head
+    block vars
+        - path="./"
+        - var activeNav="home"
+    meta(charset="utf-8")
+    meta(name="apple-mobile-web-app-capable" content="yes")
+    meta(name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width")
+    title Лия Киневская
+    base(href="test.com" target="_self")
+    //base(href="http://pepelazz.github.io/RusCatSite/" target="_self")
+    link(href='http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css')
+    script(src="//api-maps.yandex.ru/2.0/?load=package.full&lang=ru-RU")
+    block styles
+        link(href="#{path}index.css" rel="stylesheet")
+        link(href="#{path}libs/normalize.css" rel="stylesheet")
+  body
+    header
+        .row1.col1
+          .position психолог
+          .phone
+              img(src='./images/icons/phone.svg').icon
+              span +7 909 932 4768
+          .email
+              img(src='./images/icons/mail.svg').icon
+              span icievolution.info@gmail.com
+
+        .row1.col2
+            .phone
+                img(src='./images/icons/phone.svg').icon
+                span +7 909 932 4768
+            .email
+                img(src='./images/icons/mail.svg').icon
+                span icievolution.info@gmail.com
+        .row2.col1.title
+            a(href='/')
+                span.fio Киневская Лия
+                    span.mid-name Александровна
+        .row2.col2.menu
+            ul
+                li
+                    a(href='./about.html') обо мне
+                li
+                    a(href='http://icievolution.com/library' target='_blank') статьи
+                li
+                    a(href='./contacts.html') контакты
+        .row3
+            .btn-request(ng-click='modal.isShown=true')
+                span Запись
+                    span.consulting на консультацию
+        .row4
+            .cite
+                span Можно прожить какие-то эмоции и отпустить их, а можно тащить с собой хоть всю жизнь.
+        .cite-about-way
+            img(src='./images/cite-wrapper.svg')
+
+        img(src='./images/kinevskaya.png').lya
+
+    .main-area
+      .nav
+        ul
+            li ПРОБЛЕМЫ
+                ul
+                    li(class = (activeNav == 'relationship') ? 'active' : '')
+                        a(href='./relationship.html') Отношения
+                    li(class = (activeNav == 'fears') ? 'active' : '')
+                        a(href='./fears.html') Страхи
+                    li(class = (activeNav == 'psychosomatics') ? 'active' : '')
+                        a(href='./psychosomatics.html') Психосоматика
+                    li(class = (activeNav == 'destination') ? 'active' : '')
+                        a(href='./destination.html') Предназначение
+            li  РЕШЕНИЯ
+                ul
+                    li(class = (activeNav == 'seminars') ? 'active' : '')
+                        a(href='./seminars.html') Семинары
+                    li(class = (activeNav == 'trainings') ? 'active' : '')
+                        a(href='./trainings.html') Тренинги
+                    li(class = (activeNav == 'psychoanalysis') ? 'active' : '')
+                        a(href='./psychoanalysis.html') Индивидуальная работа
+
+
+
+      block content
+        .photo-grid
+            table.relationship
+                tr
+                    td
+                        img(src='./images/relationship01.jpg')
+                    td
+                        span Хочу замуж
+                tr
+                    td
+                        span Отношения с детьми
+                    td
+                        img(src='./images/relationship02.jpg')
+                tr
+                    td
+                        img(src='./images/relationship03.jpg')
+                    td
+                        span Измены
+                tr
+                    td
+                        span Разводы
+                    td
+                        img(src='./images/relationship04.jpg')
+                tr
+                    td
+                        img(src='./images/relationship05.jpg')
+                    td
+                        span Одиночество
+
+
+
+
+
+    .footer
+        .footer-grid
+            .col.col1
+                h4 Проблемы
+                ul
+                    li
+                        a(href='./relationship.html') Отношения
+                    li
+                        a(href='./fears.html') Страхи
+                    li
+                        a(href='./psychosomatics.html') Психосоматика
+                    li
+                        a(href='./destination.html') Предназначение
+            .col.col2
+                h4 Решения
+                ul
+                    li
+                        a(href='') Семинары
+                    li
+                        a(href='') Тренинги
+                    li
+                        a(href='') Индивидуальная работа
+            .col.col3
+                h4 Контакты
+                .phone
+                    img(src='./images/icons/phone.svg').icon
+                    span +7 909 932 4768
+                .email
+                    img(src='./images/icons/mail.svg').icon
+                    span icievolution.info@gmail.com
+    #modal(ng-class='{show : modal.isShown}')
+        .name
+            //span.input-title Имя
+            input(placeholder='Имя')
+        .phone
+            //span.input-title Телефон
+            input(placeholder='Телефон')
+        .btn Отправить
+        .close(ng-click='modal.isShown=false') X
+
+
+
+
+
+  script(src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js")
+  script(src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.js")
+  script(src="#{path}app.js")
+
+
+

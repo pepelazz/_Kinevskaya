@@ -1,0 +1,12 @@
+{
+    "nav":[
+        ["index.html",      "начало"],
+        ["about.html",      "о нас"],
+        ["production.html", "продукция"],
+        ["processes.html",    "процессы"],
+        ["articles.html",   "статьи"],
+        ["contact.html",    "контакты"]
+    ]
+
+}
+

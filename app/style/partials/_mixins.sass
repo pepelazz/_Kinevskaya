@@ -1,0 +1,58 @@
+
+
+@mixin inner-shadow
+    +box-shadow(rgba(black, .3) 0 -2px 8px 0 inset)
+
+@mixin light-text-shadow($opacity)
+    text-shadow: 0 0 5px rgba(255,255,255,$opacity)
+
+
+
+
+@mixin transition($params...)
+    -webkit-transition:  $params
+    -moz-transition:  $params
+    -ms-transition:  $params
+    -o-transition:  $params
+    transition:  $params
+
+@mixin transform($params...)
+    -webkit-transform:  $params
+    -moz-transform:  $params
+    -ms-transform:  $params
+    -o-transform:  $params
+    transform:  $params
+
+@mixin transform-origin($params...)
+    -webkit-transform-origin:  $params
+    -moz-transform-origin:  $params
+    -ms-transform-origin:  $params
+    -o-transform-origin:  $params
+    transform-origin:  $params
+
+@mixin absolute-pos($top, $right, $bottom, $left)
+    position: absolute
+    @if $top != null
+    top: $top
+    @if $right != null
+    right: $right
+    @if $bottom != null
+    bottom: $bottom
+    @if $left != null
+    left: $left
+
+
+
+
+
+@mixin border-radius($radii...)
+    -webkit-border-radius: $radii
+    -moz-border-radius: $radii
+    border-radius: $radii
+
+@mixin box-shadow($params...)
+    -webkit-box-shadow: $params
+    -moz-box-shadow: $params
+    box-shadow: $params
+
+

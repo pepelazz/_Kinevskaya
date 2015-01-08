@@ -7,9 +7,18 @@ html
   @include breakpoint(max-width $break-medium)
     font-size: 80%
 
-body
-  position: relative
-  min-height: 100vh
+html, body
+  height: 100%
+  width: 100%
+  margin: 0px
+  padding: 0px
+  
+.content  
+  min-height: 100%
+  height: auto !important
+  height: 100%
+  &>.wrapper
+    padding-bottom: 5rem
 
 header
   position: relative
@@ -34,7 +43,7 @@ header
     .phone
       @include breakpoint(min-width $break-phone)
         float: left
-      margin-right: 6rem
+      margin-right: 3rem
       font-weight: normal
     .email
       font-weight: normal
@@ -238,7 +247,7 @@ header
 .footer
   clear: both
   overflow: auto
-  margin-top: 2rem
+  margin-top: -5rem
   background-color: $color-header
   min-height: 5rem
   padding: 1rem $wide-border
@@ -305,6 +314,175 @@ header
     right: 0.5rem
     opacity: 0.5
     cursor: pointer
+
+.svg-wrapper
+  width: calc(100% - 210px)
+  @include breakpoint(max-width $break-small)
+    width: 100%
+  text-align: center
+  float: right
+
+#problems-sqr
+  max-width: 40rem
+  max-height: 40rem
+  .problem-circle
+    cursor: pointer
+    @include transition(all .2s ease)
+    @include transform-origin(50% 50%)
+    &:hover
+      @include transform(scale(1.2))
+  .hide
+    display: none
+  #arrow-back
+    cursor: pointer
+  #circle-bg
+    pointer-events: none
+    @include transition(all .7s ease)
+    @include transform-origin(50% 50%)
+    transition-delay: 0.2s
+    &.big
+      @include transform(scale(2))
+  #rectangle-main
+    @include transition(all .6s ease)
+    @include transform-origin(50% 50%)
+    &.big
+      @include transform(scale(3))
+
+
+$problem-sqr-size: 350px
+
+.problem-square
+  position: relative
+  overflow: hidden
+  width: calc(100% - 210px)
+  height: $problem-sqr-size*2.5
+  @include breakpoint(max-width $break-small)
+    width: 100%
+  float: right
+  .wrapper
+    position: relative
+    width: $problem-sqr-size
+    height: $problem-sqr-size
+    margin: $problem-sqr-size/2 auto
+    border: 3px solid rgba(151, 151, 151, 1)
+    @include transition(border-color 0.5s ease-in-out)
+    &.hide
+      border-color: rgba(151, 151, 151, 0)
+    .problem-circle
+      cursor: pointer
+      img
+        width: 130px
+      &.unhover
+        cursor: auto
+    #circle-bg
+      width: $problem-sqr-size*1.9
+      height: $problem-sqr-size*1.9
+      border: 2px dashed grey
+      border-radius: $problem-sqr-size*1.9
+      @include transform(translate(-24%, -24%))
+      pointer-events: none
+      @include transition(all 0.5s ease-in-out)
+      &.big
+        @include transform(scale(5))
+
+    #work
+      @include absolute-pos(-65px, null, null, -65px)
+    #emotions
+      @include absolute-pos(-65px, -65px, null, null)
+    #health
+      @include absolute-pos(null, null, -65px, -65px)
+    #family
+      @include absolute-pos(null, -65px, -65px, null)
+    #problem-title
+      @include absolute-pos(50%, null, null, 50%)
+      @include transform(translate(-50%, -50%))
+      font-size: 50px
+      font-weight: bold
+      text-align: center
+    #problem-title-detail
+      @include absolute-pos(-85px, null, null, 50%)
+      @include transform(translate(-50%, -50%))
+      font-size: 25px
+      text-align: center
+      text-transform: uppercase
+    #back-to-problem
+      @include absolute-pos(-175px, null, null, -100px)
+      display: none
+      opacity: 0.5
+      cursor: pointer
+      &:hover
+        opacity: 1
+      &.show
+        display: block
+      span
+        vertical-align: top
+        padding-left: 2px
+    #sign-work
+      @include absolute-pos(65px, null, null, -110px)
+    #sign-emotions
+      @include absolute-pos(-45px, 70px, null, null)
+    #sign-family
+      @include absolute-pos(null, -100px, 65px, null)
+    #sign-health
+      @include absolute-pos(null, null, -60px, 75px)
+
+    div[id^='sign-']
+      font-size: 25px
+      &.hide
+        display: none
+
+    .problem-sections
+      display: none
+      &.show
+        display: block
+      @include absolute-pos(-70px, null, null, -130px)
+      font-size: 20px
+      ul
+        list-style: none
+        width: 560px
+        li
+          width: 200px
+          float: left
+          margin-bottom: 5px
+          cursor: pointer
+          @include transition(all 0.1s ease-in-out)
+          &.even
+            float: right
+            &:hover
+              @include transform(translate(5%, 0))
+          &:hover
+            @include transform(translate(-5%, 0))
+            color: #2b81af
+    .problem-articles
+      @include absolute-pos(80px, null, null, -170px)
+      width: 750px
+      overflow: hidden
+      .article-text
+        float: left
+        width: 500px
+        padding-right: 50px
+        box-sizing: border-box
+      .article-img
+        width: 250px
+        float: left
+
+.first-page-choice
+  padding: 5%
+  box-sizing: border-box
+  overflow: auto
+  @include layout(12)
+  @include breakpoint(max-width $break-small)
+    clear: both
+    margin-left: 0
+  margin-left: 210px
+  a
+    @include span(6)
+    img
+      width: 100%
+
+
+
+
 
 
 

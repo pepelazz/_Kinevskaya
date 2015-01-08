@@ -105,10 +105,10 @@ gulp.task 'sass', ->
 gulp.task 'resources', ->
   gulp.src(['./app/images/**/*']).pipe(gulp.dest('./build/images'));
   gulp.src(['./libs/normalize/normalize.css']).pipe(gulp.dest('./build/libs'));
-  gulp.src(['./libs/font-awesome/**/*']).pipe(gulp.dest('./build/libs/font-awesome'));
-  gulp.src(['./libs/twitter-bootstrap/**/*']).pipe(gulp.dest('./build/libs/twitter-bootstrap'));
-  gulp.src(['./libs/woothemes-FlexSlider-06b12f8/**/*']).pipe(gulp.dest('./build/libs/woothemes-FlexSlider-06b12f8'));
-  gulp.src(['./libs/prettyPhoto_3.1.5/**/*']).pipe(gulp.dest('./build/libs/prettyPhoto_3.1.5'));
+  gulp.src(['./libs/jquery-2.0.3/jquery-2.0.3.min.js']).pipe(gulp.dest('./build/libs'));
+  gulp.src(['./libs/angular-1.3.8/angular.min.js']).pipe(gulp.dest('./build/libs'));
+  gulp.src(['./libs/snapSvg/snap.svg-min.js']).pipe(gulp.dest('./build/libs'));
+  gulp.src(['./libs/snabbt/snabbt.min.js']).pipe(gulp.dest('./build/libs'));
   gulp.src(['./libs/*.css']).pipe(gulp.dest('./build/libs'));
   gulp.src(['./libs/*.js']).pipe(gulp.dest('./build/libs'));
 

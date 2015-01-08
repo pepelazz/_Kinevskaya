@@ -1,0 +1,31 @@
+extends index.jade
+block vars
+    - path="./"
+    - var activeNav='problems'
+block content
+    div(ng-controller='problemSqr').problem-square
+        .wrapper
+            div(ng-repeat='problem in problems' my-shake id='{{problem.name}}' problem-circle='{{$index}}').problem-circle
+                img(ng-src='./images/problem-sqr/circle-{{problem.name}}.svg'  ng-click='problemsSqr.zoomInProblem($index); $event.stopPropagation()' )
+            #circle-bg
+            #problem-title ПРОБЛЕМЫ
+            #problem-title-detail
+            div(ng-click='problemsSqr.zoomOutProblem()')#back-to-problem
+                img(src='./images/problem-sqr/arrow-back.svg')
+                span ОБРАТНО
+            #sign-work РАБОТА
+            #sign-emotions ЭМОЦИИ
+            #sign-health ЗДОРОВЬЕ
+            #sign-family СЕМЬЯ
+            div(ng-repeat='problem in problems' ng-show='problem.isSelected').problem-sections
+                ul
+                    li(ng-repeat='section in problem.sections' ng-class-even="'even'"
+                    ng-click='problemsSqr.showArticle($parent.$index, $index)') {{section}}
+            .problem-articles
+                div(ng-show='problemsSqr.selectedName.problem == 0 && problemsSqr.selectedName.article == 0')
+                    include ./includes/problem-articles/work0.jade
+                div(ng-show='problemsSqr.selectedName.problem == 0 && problemsSqr.selectedName.article == 1')
+                    include ./includes/problem-articles/work1.jade
+                div(ng-show='problemsSqr.selectedName.problem == 0 && problemsSqr.selectedName.article == 2')
+                    include ./includes/problem-articles/work2.jade
+

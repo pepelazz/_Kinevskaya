@@ -2,6 +2,7 @@
 
 @import "susy"
 @import "breakpoint"
+@import "modular-scale"
 
 
 //--- Variables
@@ -18,15 +19,22 @@ $color-header-banner: #0BA2B2
 
 
 //sizes
+$menu-width: 210px
 
 
 //font-sizes
+$ms-base: 1rem 1.25rem
+$ms-ratio: $golden
 
 $wide-border: 10%
 
 
 //--- Mixins
-@mixin conainer-left-padding
+%main-area-left-margin
+  margin-left: $menu-width
+  @include breakpoint(max-width $break-small)
+    clear: both
+    margin-left: 0
 
 
 @mixin btn($bg-color,$color)
@@ -46,6 +54,14 @@ $wide-border: 10%
   li
     float: left
     margin-right: $margin-right
+
+%vertical-align
+  position: relative
+  top: 50%
+  -webkit-transform: translateY(-50%)
+  -ms-transform: translateY(-50%)
+  transform: translateY(-50%)
+
 
 
 @import "partials/mixins"

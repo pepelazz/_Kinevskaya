@@ -14,7 +14,7 @@ html(ng-app='app' ng-controller='main')
     link(href='http://fonts.googleapis.com/css?family=Roboto:400,500,400italic,700&subset=cyrillic-ext,latin' rel='stylesheet' type='text/css')
     block styles
         link(href="#{path}index.css" rel="stylesheet")
-        link(href="#{path}libs/normalize.css" rel="stylesheet")
+        link(href="#{path}lib/normalize.css" rel="stylesheet")
   body
     .content
         .wrapper
@@ -53,7 +53,10 @@ html(ng-app='app' ng-controller='main')
                             span.consulting на консультацию
                 .row4
                     .cite
-                        span Можно прожить какие-то эмоции и отпустить их, а можно тащить с собой хоть всю жизнь.
+                        span
+                            |Я верю, что каждый человек достин того, чтобы узнать <b>кто он</b> на самом деле.
+                            | В каждом человеке есть страх узнать правду и тот кто шагнет в этот страх совершит самую  важную победу
+                            | в своей жизни.
                 .cite-about-way
                     img(src='./images/cite-wrapper.svg')
 
@@ -85,11 +88,13 @@ html(ng-app='app' ng-controller='main')
 
               block content
                   .first-page-choice
-                    a(href='./problems.html')
-                        img(src='./images/problem-map.jpg')
-                    a(href='')
-                        img(src='./images/solve-problem-choice.jpg')
-
+                      table
+                        tr
+                            td: a(href='./problems.html'): img(src='./images/problem-map.jpg')
+                            td: a(href='./problems.html'): span карта проблем
+                        tr
+                            td: a(href='./choice.html'): img(src='./images/solve-problem-choice.jpg')
+                            td: a(href='./choice.html'): span выбор решений
 
 
 
@@ -169,7 +174,7 @@ html(ng-app='app' ng-controller='main')
       //script(src="#{path}libs/jquery-2.0.3.min.js")
       //script(src="#{path}libs/angular.min.js")
       //script(src="#{path}libs/snap.svg-min.js")
-      script(src="#{path}libs/snabbt.min.js")
+      script(src="#{path}lib/snabbt.min.js")
       script(src="#{path}app.js")
 
 

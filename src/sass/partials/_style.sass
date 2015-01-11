@@ -124,13 +124,15 @@ header
             display: none
   .row4
     @include break
-    @include span(3)
+    @include span(5)
     @include breakpoint(max-width $break-small)
-      @include span(5)
+      @include span(6)
     @include breakpoint(max-width $break-phone)
       display: none
     span
       font-size: 1.3rem
+      @include breakpoint(max-width $break-1150)
+        font-size: 1rem
       font-weight: normal
       opacity: 0.7
       font-style: italic
@@ -151,7 +153,7 @@ header
   overflow: auto
   padding: 1rem $wide-border
   .nav
-    width: 210px
+    width: $menu-width
     float: left
     @include breakpoint(max-width $break-small)
       width: 100%
@@ -184,11 +186,8 @@ header
             opacity: 0.8
   .photo-grid
     @include layout(10 no-gutters)
-    @include breakpoint(max-width $break-small)
-      clear: both
-      margin-left: 0
+    @extend %main-area-left-margin
     overflow: auto
-    margin-left: 210px
     table.relationship
       width: 100%
       td
@@ -258,7 +257,7 @@ header
     bottom: 0
     width: 100%
   .footer-grid
-    margin-left: 210px
+    margin-left: $menu-width
     @include layout(9 no-gutters)
     .col
       @include span(3)
@@ -316,7 +315,7 @@ header
     cursor: pointer
 
 .svg-wrapper
-  width: calc(100% - 210px)
+  width: calc(100% - #{$menu-width})
   @include breakpoint(max-width $break-small)
     width: 100%
   text-align: center
@@ -354,7 +353,7 @@ $problem-sqr-size: 350px
 .problem-square
   position: relative
   overflow: hidden
-  width: calc(100% - 210px)
+  width: calc(100% - #{$menu-width})
   height: $problem-sqr-size*2.5
   @include breakpoint(max-width $break-small)
     width: 100%
@@ -466,19 +465,74 @@ $problem-sqr-size: 350px
         width: 250px
         float: left
 
-.first-page-choice
-  padding: 5%
-  box-sizing: border-box
-  overflow: auto
-  @include layout(12)
-  @include breakpoint(max-width $break-small)
-    clear: both
-    margin-left: 0
-  margin-left: 210px
-  a
-    @include span(6)
+%table-choice
+  width: 100%
+  tr
+    &:hover
+      td
+        opacity: 0.5
+  td
+    width: 50%
+    padding-bottom: 1rem
     img
       width: 100%
+  a
+    text-decoration: none
+  span
+    display: block
+    font-size: ms(2)
+    @include breakpoint(max-width $break-medium)
+      font-size: ms(1)
+    padding-left: ms(1)
+    text-transform: uppercase
+    color: #000000
+
+.first-page-choice
+  padding-left: 5%
+  box-sizing: border-box
+  overflow: auto
+  @extend %main-area-left-margin
+  table
+    @extend %table-choice
+
+.choice-select
+  padding-left: 5%
+  box-sizing: border-box
+  @extend %main-area-left-margin
+  .title-table
+    @extend %table-choice
+    tr
+      &:hover
+        td
+          opacity: 1
+  .question
+    td:first-child
+      cursor: pointer
+      height: ms(6)
+      img
+        width: ms(2)
+        margin-right: ms(0)
+        vertical-align: middle
+      .icon-selected
+        display: none
+        &.show
+          display: block
+      .icon-unselected.hide
+        display: none
+      &:hover
+        .icon-selected
+          display: block
+        .icon-unselected
+          display: none
+  .answer
+    display: none
+    margin-top: 1rem
+    margin-bottom: 1rem
+    background: lightgrey
+    padding: 1rem
+    border-radius: 5px
+    &.show
+      display: block
 
 
 

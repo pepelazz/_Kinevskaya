@@ -62,9 +62,9 @@ module.exports =
         dest: dest
         outputName: "app.js"
       }
-      {
-        entries: src + "/javascript/util.coffee"
-        dest: dest
-        outputName: "test.js"
-      }
+#      {
+#        entries: src + "/javascript/util.coffee"
+#        dest: dest
+#        outputName: "test.js"
+#      }
     ]

@@ -494,6 +494,10 @@ $problem-sqr-size: 350px
   @extend %main-area-left-margin
   table
     @extend %table-choice
+    tr.video
+      &:hover
+        td
+          opacity: 1
 
 .choice-select
   padding-left: 5%
@@ -533,6 +537,21 @@ $problem-sqr-size: 350px
     border-radius: 5px
     &.show
       display: block
+
+
+
+.video-container 
+  position: relative
+  padding-bottom: 56.25%
+  padding-top: 30px
+  height: 0
+  overflow: hidden
+  iframe, object, embed
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
 
 
 

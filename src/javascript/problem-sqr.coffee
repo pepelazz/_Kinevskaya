@@ -73,6 +73,7 @@ module.controller 'problemSqr',
          $scope.problemsSqr.selectedName =
            problem: problemIndex
            article: articleIndex
+         calcArticleHeight()
          return)
      selectedName: {}
 
@@ -140,3 +141,13 @@ module.directive 'problemCircle',
       return
    )]
 
+
+calcArticleHeight =(->
+  articles = $('.article-text', '.problem-articles')
+  setTimeout ()->
+    articles.each (i)->
+      articleHeight = $(articles[i]).height()
+      if(articleHeight > 0)
+        $('.problem-square').css(height: articleHeight + $('.problem-articles').offset().top - $('.problem-square').offset().top)
+  , 100
+  return)
